@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+  <body data-th-object="${weather}">
+    <h1>
+      <span>Weather in <span data-th-text="${weather.getCity()}"></span></span>
+    </h1>
+    <p>Temp: <span data-th-text="${weather.getTemp()}"></span></p>
+    <p>
+      Conditions:
+      <span data-th-text="${weather.getConditions().getMain()}"></span>
+      :
+      <span data-th-text="${weather.getConditions().getDescription()}"></span>
+    </p>
+    <p><img data-th-src="${weather.getConditions().getIcon()}" /></p>
+    <p>
+      Sunrise:
+      <span data-th-text="${weather.getSuntimings.getSunrise()}"></span>
+    </p>
+    <p>
+      Sunset:
+      <span data-th-text="${weather.getSuntimings.getSunset()}"></span>
+    </p>
+  </body>
+</html>
